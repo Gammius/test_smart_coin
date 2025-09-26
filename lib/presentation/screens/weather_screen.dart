@@ -71,8 +71,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
           const Divider(),
           Expanded(
             child: selectedTab == "Current"
-                ? buildCurrentWeather(context,provider.currentWeather)
-                : buildForecastWeather(provider.forecastWeather),
+                ? CurrentWeatherWidget(currentWeather: provider.currentWeather)
+                : ForecastWeatherWidget(forecastWeather: provider.forecastWeather),
           ),
         ],
       ),
