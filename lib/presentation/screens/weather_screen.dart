@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_smart_coin/di.dart';
 import '../provider/weather_provider.dart';
 import 'current_weather_widget.dart';
 import 'forecast_weather_widget.dart';
+
+class WeatherScreenProvider extends StatelessWidget {
+  const WeatherScreenProvider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+        create: (_) => getIt<WeatherProvider>(),
+      child: const WeatherScreen(),
+    );
+  }
+}
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
